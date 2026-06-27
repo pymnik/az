@@ -1,0 +1,70 @@
+:root{
+  --bg:#10141c;
+  --panel:#1b2230;
+  --ink:#e8eef7;
+  --muted:#8b97ab;
+  --accent:#ffcf3a;
+  --p1:#39b6ff;
+  --p2:#ff5a52;
+  --p3:#5ce06a;
+  --p4:#c184ff;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-user-select:none;user-select:none;}
+html,body{height:100%;background:#fff;overflow:hidden;font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);}
+#app{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#ffffff;}
+canvas#game{display:block;background:#ffffff;border-radius:10px;}
+
+.overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:rgba(8,10,16,.72);backdrop-filter:blur(3px);z-index:10;text-align:center;}
+.overlay.hidden{display:none;}
+
+.panel{background:linear-gradient(180deg,#202a3b,#161d29);padding:34px 40px;border-radius:18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.06);
+  border:1px solid #313b50;min-width:380px;}
+
+.logo{font-size:96px;font-weight:900;letter-spacing:6px;line-height:.9;color:var(--ink);
+  text-shadow:0 6px 0 #0c0f16,0 0 30px rgba(255,207,58,.25);}
+.logo span{color:var(--accent);}
+.tag{letter-spacing:10px;color:var(--muted);font-weight:700;margin:2px 0 22px;font-size:15px;}
+
+.setup{display:flex;flex-direction:column;gap:14px;margin-bottom:24px;}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.row label{font-weight:800;letter-spacing:2px;color:var(--muted);font-size:13px;}
+.seg{display:flex;background:#0e131d;border-radius:10px;padding:4px;border:1px solid #2a3346;}
+.seg button{background:transparent;color:var(--muted);border:0;padding:8px 16px;border-radius:7px;font-weight:800;
+  cursor:pointer;font-size:15px;transition:.12s;}
+.seg button.on{background:var(--accent);color:#1a1300;box-shadow:0 2px 8px rgba(255,207,58,.4);}
+.seg button:hover:not(.on){color:var(--ink);}
+
+button.big{margin-top:6px;width:100%;padding:15px;border:0;border-radius:12px;background:linear-gradient(180deg,#ffd84d,#f5b800);
+  color:#241a00;font-weight:900;letter-spacing:3px;font-size:20px;cursor:pointer;box-shadow:0 8px 22px rgba(245,184,0,.35);}
+button.big:hover{filter:brightness(1.06);transform:translateY(-1px);}
+button.big:active{transform:translateY(1px);}
+button.ghost{margin-top:10px;width:100%;padding:11px;border:1px solid #3a455c;border-radius:12px;
+  background:transparent;color:var(--muted);font-weight:800;letter-spacing:2px;cursor:pointer;}
+button.ghost:hover{color:var(--ink);border-color:#55617c;}
+
+.controls{margin-top:22px;display:flex;flex-direction:column;gap:6px;}
+.cc{font-size:13px;color:var(--muted);}
+.cc b{color:var(--ink);}
+kbd{background:#0e131d;border:1px solid #36415a;border-bottom-width:3px;border-radius:6px;padding:1px 7px;font-size:12px;color:var(--ink);}
+.note{margin-top:18px;color:var(--muted);font-size:12.5px;max-width:340px;line-height:1.5;}
+.credit{margin-top:10px;color:#566177;font-size:11px;}
+
+.bannertext{font-size:64px;font-weight:900;letter-spacing:4px;text-shadow:0 6px 0 #0c0f16;}
+.bannersub{margin-top:8px;font-size:20px;color:var(--muted);font-weight:700;letter-spacing:2px;}
+
+#hud{position:absolute;top:14px;left:0;right:0;display:flex;gap:14px;justify-content:center;z-index:5;pointer-events:none;}
+.score{display:flex;align-items:center;gap:9px;background:rgba(14,19,29,.82);padding:8px 14px;border-radius:12px;
+  border:1px solid #2a3346;font-weight:800;letter-spacing:1px;}
+.score .dot{width:16px;height:16px;border-radius:5px;box-shadow:0 0 12px currentColor;}
+.score .pts{font-size:20px;min-width:22px;text-align:center;}
+.score .wp{font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase;}
+
+#pausebtn{position:absolute;top:14px;right:16px;z-index:6;width:40px;height:40px;border-radius:10px;
+  border:1px solid #2a3346;background:rgba(14,19,29,.82);color:var(--ink);font-weight:900;letter-spacing:2px;cursor:pointer;}
+#pausebtn:hover{border-color:#55617c;}
+
+#gameover #finalscores{display:flex;flex-direction:column;gap:8px;margin:18px 0 6px;}
+#gameover .fs{display:flex;justify-content:space-between;gap:30px;font-weight:800;padding:6px 12px;border-radius:8px;background:#0e131d;}
+#winline{font-size:34px;font-weight:900;letter-spacing:2px;margin-bottom:4px;}

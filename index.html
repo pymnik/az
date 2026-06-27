@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AZ — Tank Battle</title>
+<link rel="stylesheet" href="style.css?v=9" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="game"></canvas>
+
+    <!-- MAIN MENU -->
+    <div id="menu" class="overlay">
+      <div class="panel">
+        <h1 class="logo">A<span>Z</span></h1>
+        <p class="tag">TANK&nbsp;BATTLE</p>
+
+        <div class="setup">
+          <div class="row">
+            <label>PLAYERS</label>
+            <div class="seg" id="seg-humans">
+              <button data-v="1">1</button>
+              <button data-v="2" class="on">2</button>
+              <button data-v="3">3</button>
+            </div>
+          </div>
+          <div class="row">
+            <label>BOTS</label>
+            <div class="seg" id="seg-bots">
+              <button data-v="0" class="on">0</button>
+              <button data-v="1">1</button>
+              <button data-v="2">2</button>
+              <button data-v="3">3</button>
+            </div>
+          </div>
+          <div class="row">
+            <label>WIN&nbsp;AT</label>
+            <div class="seg" id="seg-target">
+              <button data-v="5">5</button>
+              <button data-v="10" class="on">10</button>
+              <button data-v="20">20</button>
+            </div>
+          </div>
+        </div>
+
+        <button id="play" class="big">PLAY</button>
+
+        <div class="controls">
+          <div class="cc"><b>P1</b> <kbd>E</kbd><kbd>S</kbd><kbd>D</kbd><kbd>F</kbd> move &middot; <kbd>1</kbd> fire</div>
+          <div class="cc"><b>P2</b> <kbd>O</kbd><kbd>K</kbd><kbd>L</kbd><kbd>;</kbd> move &middot; <kbd>R&nbsp;Ctrl</kbd> fire</div>
+          <div class="cc"><b>P3</b> Numpad <kbd>8</kbd><kbd>4</kbd><kbd>5</kbd><kbd>6</kbd> move &middot; <kbd>&uarr;</kbd> fire</div>
+        </div>
+        <p class="note">Shells ricochet off walls — and can blast you too. Grab crates for weapons.</p>
+        <p class="credit">An original desktop remake inspired by the classic AZ tank game.</p>
+      </div>
+    </div>
+
+    <!-- ROUND BANNER -->
+    <div id="banner" class="overlay hidden">
+      <div class="bannertext" id="banner-text"></div>
+      <div class="bannersub" id="banner-sub"></div>
+    </div>
+
+    <!-- MATCH OVER -->
+    <div id="gameover" class="overlay hidden">
+      <div class="panel">
+        <h2 id="winline">WINNER</h2>
+        <div id="finalscores"></div>
+        <button id="again" class="big">REMATCH</button>
+        <button id="tomenu" class="ghost">MENU</button>
+      </div>
+    </div>
+
+    <div id="hud"></div>
+    <button id="pausebtn" title="Pause (Esc)">II</button>
+
+    <!-- PAUSE -->
+    <div id="pause" class="overlay hidden">
+      <div class="panel">
+        <h2>PAUSED</h2>
+        <button id="resume" class="big">RESUME</button>
+        <button id="quit" class="ghost">QUIT TO MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js?v=9"></script>
+</body>
+</html>

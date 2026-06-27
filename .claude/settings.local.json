@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.y8.com)",
+      "WebSearch",
+      "Bash(npm --version)",
+      "PowerShell($n = \\(Get-Command node -ErrorAction SilentlyContinue\\); if \\($n\\) { node --version; npm --version } else { \"node not found\" })",
+      "PowerShell(foreach \\($c in 'python','python3','py','cargo','rustc','winget','dotnet','code'\\) { $g = Get-Command $c -ErrorAction SilentlyContinue; if \\($g\\) { \"$c -> $\\($g.Source\\)\" } else { \"$c -> MISSING\" } })"
+    ]
+  }
+}
